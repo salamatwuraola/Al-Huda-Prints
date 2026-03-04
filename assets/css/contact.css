@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Smooch+Sans:wght@100..900&display=swap');
+
+body{
+  margin: 0;
+  font-family: "Smooch Sans" sans-serif;
+}
+.navbar{
+  color: black;
+  padding:10px 15px;
+  align-items: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  background-color: whitesmoke;
+}
+
+.logo img{
+  width: 60px;
+  display: block;
+}
+.nav-links{
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: flex;
+  margin-left: 60px;
+}
+.nav-links a{
+  text-decoration: none;
+  padding: 10px;
+}
+.nav-links a.active{
+  color: white;
+  background-color: red;
+  padding: 10px;
+  border-radius: 5px;
+}
+.nav-links a:hover{
+  background-color: #e5e5e5;
+  border-radius: 5px;
+}
