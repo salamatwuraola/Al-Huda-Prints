@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/images/logo.png">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <title>Al-Huda Prints Contact</title>
+    <style>
+        body {
+      background-color: #f8f9fa;
+    }
+    .contact-form {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .form-header {
+      text-align: center;
+      color: #003399;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+      font-family: 'Oswald', sans-serif;
+    }
+    .btn-custom {
+      background-color: #003399;
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+    .btn-custom:hover {
+      background-color: #E31E24;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(227,30,36,0.3);
+    }
+    .form-control, .form-select {
+      border-radius: 8px;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: #003399;
+      box-shadow: 0 0 0 0.2rem rgba(0,51,153,0.25);
+    }
+    .required-field {
+      color: #E31E24;
+    }
+    .method-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+    .method-badge.whatsapp {
+      background-color: #25D366;
+      color: white;
+    }
+    .method-badge.email {
+      background-color: #003399;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- navbar section -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Al-Huda Prints Logo">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="whatwedo.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a class="active" href="contact.html">Contact</a>
+        </div>
+    </div>
+    <!--breadcrumb-->
+    <div class="breadcrumb-container" id="breadcrumb">
+        <div class="breadcrumb" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/third.jpeg');">
+            <div class="centered">
+                <h1>Contact Us</h1>
+                <p><i>We'd love to hear from you</i></p>
+                <a href="index.html">Home</a> <a href="#"> | Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <!--Contact Us Form-->
+    <div class="contact-form">
+        <h2 class="form-header">Get In Touch</h2>
+        <form id="contactForm">
+            <!-- Name Field -->
+            <div class="mb-4">
+                <label for="name" class="form-label fw-bold">Your Name <span class="required-field">*</span></label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+            </div>
+            <!-- Contact Method Selection -->
+            <div class="mb-4">
+                <label class="form-label fw-bold">Preferred Contact Method <span class="required-field">*</span></label>
+                <select class="form-select" id="contactMethod" required>
+                    <option value="whatsapp" selected>WhatsApp (Recommended)</option>
+                    <option value="email">Email</option>
+                </select>
+                <div id="methodHint" class="mt-2">
+                    <span class="method-badge whatsapp">✓ WhatsApp: Quick reply</span>
+                </div>
+            </div>
+            <!-- Phone Number (shown by default for WhatsApp) -->
+            <div class="mb-4" id="phoneField">
+                <label for="number" class="form-label fw-bold">Phone Number <span class="required-field">*</span></label>
+                <input type="tel" class="form-control" id="number" placeholder="e.g., 2348139594292" required>
+                <small class="text-muted">Include country code without + (e.g., 234 for Nigeria)</small>
+            </div>
+            <!-- Email Field (shown when email selected) -->
+            <div class="mb-4" id="emailField" style="display: none;">
+                <label for="email" class="form-label fw-bold">Email Address <span class="required-field">*</span></label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+                <small class="text-muted">We'll respond within 24 hours</small>
+            </div>
+            <!-- Subject Field -->
+            <div class="mb-4">
+                <label for="subject" class="form-label fw-bold">Subject</label>
+                <input type="text" class="form-control" id="subject" placeholder="What is this regarding?">
+            </div>
+            <!-- Message Field -->
+            <div class="mb-4">
+                <label for="message" class="form-label fw-bold">Your Message <span class="required-field">*</span></label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </div>
+            <!-- Form Buttons -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-custom px-5 py-3" id="submitBtn">
+                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                </button>
+                <button type="button" class="btn btn-outline-secondary px-4 py-3 ms-3" onclick="resetForm()">
+                    <i class="fas fa-redo me-2"></i>Reset
+                </button>
+            </div>
+        </form>
+        <!-- Success/Error Messages -->
+        <div id="formMessage" class="mt-4 text-center" style="display: none;"></div>
+    </div>
+    <script>
+    // Toggle between WhatsApp and Email fields
+    document.getElementById('contactMethod').addEventListener('change', function() {
+        const method = this.value;
+        const phoneField = document.getElementById('phoneField');
+        const emailField = document.getElementById('emailField');
+        const methodHint = document.getElementById('methodHint');
+        const phoneInput = document.getElementById('number');
+        const emailInput = document.getElementById('email');
+
+        if (method === 'whatsapp') {
+            phoneField.style.display = 'block';
+            emailField.style.display = 'none';
+            phoneInput.required = true;
+            emailInput.required = false;
+            methodHint.innerHTML = '<span class="method-badge whatsapp">✓ WhatsApp: Quick reply within minutes</span>';
+        } else {
+            phoneField.style.display = 'none';
+            emailField.style.display = 'block';
+            phoneInput.required = false;
+            emailInput.required = true;
+            methodHint.innerHTML = '<span class="method-badge email">✓ Email: Response within 24 hours</span>';
+        }
+    });
+
+    // Main form submission handler
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById("name").value.trim();
+        const method = document.getElementById("contactMethod").value;
+        const phone = document.getElementById("number").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value.trim() || "New Contact Form Submission";
+        const message = document.getElementById("message").value.trim();
+
+        // Validation
+        if (!name) {
+            showMessage("Please enter your name", "error");
+            return;
+        }
+
+        if (!message) {
+            showMessage("Please enter your message", "error");
+            return;
+        }
+
+        // WhatsApp validation
+        if (method === "whatsapp") {
+            if (!phone) {
+                showMessage("Please enter your phone number for WhatsApp", "error");
+                return;
+            }
+
+            // Clean phone number
+            let cleanPhone = phone.replace(/[^0-9]/g, '');
+            if (!cleanPhone.startsWith('234')) {
+                cleanPhone = '234' + cleanPhone.replace(/^0+/, '');
+            }
+
+            // Format WhatsApp message with all details
+            const whatsappMessage =
+                `*New Contact Form Submission*%0A%0A` +
+                `*Name:* ${name}%0A` +
+                `*Phone:* ${cleanPhone}%0A` +
+                `*Subject:* ${subject}%0A` +
+                `*Message:*%0A${message}%0A%0A` +
+                `*Sent from:* Al-Huda Prints Website`;
+
+            // Send to WhatsApp
+            const whatsappNumber = "2348139594292"; // Your WhatsApp number
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
+
+            showMessage("Redirecting to WhatsApp...", "success");
+        }
+        // Email option
+        else if (method === "email") {
+            if (!email) {
+                showMessage("Please enter your email address", "error");
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                showMessage("Please enter a valid email address", "error");
+                return;
+            }
+
+            // Format email body
+            const emailBody =
+                `Name: ${name}%0D%0A` +
+                `Email: ${email}%0D%0A` +
+                `Subject: ${subject}%0D%0A` +
+                `Message: ${message}%0D%0A%0D%0A` +
+                `Sent from Al-Huda Prints Website`;
+
+            window.location.href = `mailto:alhudacentre01@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+            showMessage("Opening your email client...", "success");
+        }
+    });
+
+    // Helper function to validate email
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    // Show message to user
+    function showMessage(text, type) {
+        const msgDiv = document.getElementById('formMessage');
+        msgDiv.style.display = 'block';
+        msgDiv.innerHTML = text;
+        msgDiv.className = 'mt-4 text-center p-3 rounded ' + (type === 'error' ? 'bg-danger text-white' : 'bg-success text-white');
+
+        // Hide after 5 seconds for success, keep for errors
+        if (type === 'success') {
+            setTimeout(() => {
+                msgDiv.style.display = 'none';
+            }, 5000);
+        }
+    }
+
+    // Reset form
+    function resetForm() {
+        document.getElementById("contactForm").reset();
+        document.getElementById('formMessage').style.display = 'none';
+
+        // Reset to WhatsApp view (default)
+        document.getElementById('contactMethod').value = 'whatsapp';
+        document.getElementById('phoneField').style.display = 'block';
+        document.getElementById('emailField').style.display = 'none';
+        document.getElementById('number').required = true;
+        document.getElementById('email').required = false;
+        document.getElementById('methodHint').innerHTML = '<span class="method-badge whatsapp">✓ WhatsApp: Quick reply</span>';
+    }
+
+    // Auto-format phone number as user types
+    document.getElementById('number').addEventListener('input', function(e) {
+        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,4})(\d{0,6})/);
+        e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+    });
+    </script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--backtohome sticky section-->
+    <a href="#breadcrumb" class="sticky">
+        <img src="assets/images/arrow-up-circle-fill.svg" alt="Back to top">
+    </a>
+    <!-- call to action -->
+    <div class="cta">
+        <h2>Ready to start your Printing Journey?</h2>
+        <p>Contact Us today and lets bring your ideas to life</p>
+        <a href="tel:+2348139594292"><img src="assets/images/phone-solid-full.svg" width="50px" alt="Phone"></a>
+        <a href="https://wa.me/2348139594292" target="_blank"><img src="assets/images/whatsappicon.png" width="50px" alt="WhatsApp"></a>
+    </div>
+    <!--footer-->
+    <div class="footer-section">
+        <div class="container">
+            <div class="footer-box">
+                <img src="assets/images/logo.png" class="footer-logo" alt="Logo">
+                <p>We are your one Stop Printing Company</p>
+            </div>
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="#">Refund Policy</a>
+                <a href="#">Privacy Policy</a>
+                <a href="about.html">About</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p><img src="assets/images/mailicon.png" width="20px" alt="Email">: alhudacentre01@gmail.com</p>
+                <p><img src="assets/images/phone-solid-full.svg" width="20px" alt="Phone">: +234(0)8139594292</p>
+                <p>67, Edun Street, Ilorin, Kwara State, Nigeria</p>
+            </div>
+        </div>
+    </div>
+    <!--footer bottom-->
+    <div class="footer-bottom">
+        <p>© 2026 || Huda Technologies. All rights reserved.</p>
+    </div>
+</body>
+
+</html>
